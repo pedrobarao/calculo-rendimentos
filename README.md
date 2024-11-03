@@ -4,36 +4,69 @@ Esta é uma aplicação simples que calcula o rendimento de um CDB baseado em um
 
 ## Executando o serviço ✔️
 
-Para rodar o serviço no seu ambiente local você pode utilizar o Docker ou diretamente da sua IDE de preferência.
-
 ### Requisitos 🔴
 
-- .NET 8 - Para rodar na IDE de sua preferência.
-- Docker - Para rodar a aplicação em um container.
+- .NET 8
+- Angular 17
 
-### Passo a passo 👣
+### Back-end
+Para rodar o serviço no seu ambiente local basta seguir os seguintes passos:
 
-### IDE 🪛
-
-
-
-### Docker 🐳
-
-Certifique-se de que o Docker esteja rodando em sua máquina. Na raiz do projeto, abra um terminal e siga os passos abaixo.
-
-1 - Faça o build da imagem Docker:
+1 - Restaurar as dependências do projeto:
 
 ```bash
-docker build --no-cache -t api_calculo_rendimentos -f ./src/Services/B3.CalculoRendimentos.Api/Dockerfile .
+dotnet restore
 ```
 
-2 - Execute o container:
+2 - Fazer o build do projeto:
 
 ```bash
-docker run -d -p 8080:8080 --name api_calculo_rendimentos api_calculo_rendimentos
+dotnet build --no-restore
 ```
 
-Se tudo correr bem você poderá acessar a aplicação em `http://localhost:8080/swagger`.
+3 - Executar o projeto:
+
+```bash
+dotnet run --project .\src\Services\B3.CalculoRendimentos.Api\B3.CalculoRendimentos.Api.csproj
+```
+
+4 - Verifique a porta na qual a aplicação está rodando e acesse o Swagger para testar a API:
+
+![img.png](img.png)
+
+No exemplo da imagem a seguir, a aplicação está rodando na porta `5240`. Neste caso, acesse o Swagger através do link `http://localhost:5240/swagger/index.html`.
+
+### Front-end
+
+Para rodar o front-end no seu ambiente local basta seguir os seguintes passos:
+
+1 - No terminal, navegue até a pasta `./src/Web/B3.CalculoRendimentos.Web`.
+
+2 - Altere a url base da API no arquivo `./src/Web/B3.CalculoRendimentos.Web/src/app/app.service` para a url da API que está rodando no seu ambiente local:
+
+![img_2.png](img_2.png)
+
+3 - Instale as dependências do projeto:
+
+```bash
+npm install
+```
+
+4 - Faça o build do projeto:
+
+```bash
+npm run build
+```
+
+5 - Rode o projeto:
+
+```bash
+npm run start
+```
+
+6 - Verifique a porta na qual a aplicação está rodando e acesse o endereço no navegador:
+
+![img_1.png](img_1.png)
 
 ## Testes 🧪
 Os testes são executados automaticamente no pipeline de CI/CD a cada integração com a branch principal `(main)`.
@@ -46,15 +79,15 @@ dotnet test
 ```
 
 ### Front-end TODO
-Para executar os testes no seu ambiente local, basta executar o seguinte comando na raiz do projeto:
+Para executar os testes no seu ambiente local, basta executar o seguinte comando na pasta `./src/Web/B3.CalculoRendimentos.Web`:
 
 ```bash
-jest
+npm run test
 ```
 
 ### Cobertura de Testes
 
-A cobertura de testes foi realizada utilizando **Coverlet** e **Report Generator** para uma exibição dos resultados.
+A cobertura de testes do backend foi realizada utilizando **Coverlet** e **Report Generator** para uma exibição dos resultados.
 Você pode acessar o relatório de cobertura de testes no [GitHub Pages](https://pedrobarao.github.io/fiap.5nett.contatos/) do projeto. 
 
 Se preferir, você pode gerar o relatório de cobertura de testes executando localmente o seguinte comando na raiz do projeto:
