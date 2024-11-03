@@ -23,7 +23,7 @@
     </ItemGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\..\..\src\B3.CalculoRendimentos.Domain\B3.CalculoRendimentos.Domain.csproj"/>
+        <ProjectReference Include="..\..\..\src\Services\B3.CalculoRendimentos.Domain\B3.CalculoRendimentos.Domain.csproj"/>
     </ItemGroup>
 
 </Project>

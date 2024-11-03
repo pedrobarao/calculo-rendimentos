@@ -7,11 +7,11 @@ EXPOSE 8081
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 ARG BUILD_CONFIGURATION=Release
 WORKDIR /src
-COPY ["src/B3.CalculoRendimentos.Api/B3.CalculoRendimentos.Api.csproj", "src/B3.CalculoRendimentos.Api/"]
-COPY ["src/B3.CalculoRendimentos.Domain/B3.CalculoRendimentos.Domain.csproj", "src/B3.CalculoRendimentos.Domain/"]
-RUN dotnet restore "src/B3.CalculoRendimentos.Api/B3.CalculoRendimentos.Api.csproj"
+COPY ["src/Services/B3.CalculoRendimentos.Api/B3.CalculoRendimentos.Api.csproj", "src/Services/B3.CalculoRendimentos.Api/"]
+COPY ["src/Services/B3.CalculoRendimentos.Domain/B3.CalculoRendimentos.Domain.csproj", "src/Services/B3.CalculoRendimentos.Domain/"]
+RUN dotnet restore "src/Services/B3.CalculoRendimentos.Api/B3.CalculoRendimentos.Api.csproj"
 COPY . .
-WORKDIR "/src/src/B3.CalculoRendimentos.Api"
+WORKDIR "/src/src/Services/B3.CalculoRendimentos.Api"
 RUN dotnet build "B3.CalculoRendimentos.Api.csproj" -c $BUILD_CONFIGURATION -o /app/build
 
 FROM build AS publish
