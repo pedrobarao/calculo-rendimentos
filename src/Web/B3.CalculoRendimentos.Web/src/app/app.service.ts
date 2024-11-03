@@ -1,0 +1,23 @@
+﻿import {Injectable} from '@angular/core';
+import {HttpClient} from '@angular/common/http';
+import {Observable} from 'rxjs';
+
+@Injectable({
+    providedIn: 'root'
+})
+export class AppService {
+    private apiUrl = 'http://rendimentos-api:8080/api/rendimentos';
+
+    constructor(private http: HttpClient) {
+    }
+
+    calcularRendimento(valorInicial: number, prazoMeses: number): Observable<{
+        rendimentoBruto: number,
+        rendimentoLiquido: number
+    }> {
+        return this.http.post<{ rendimentoBruto: number, rendimentoLiquido: number }>(this.apiUrl, {
+            valorInicial,
+            prazoMeses
+        });
+    }
+}

@@ -1,0 +1,29 @@
+﻿version: '3'
+services:
+  
+  rendimentos-api:
+    container_name: rendimentos-api
+    build:
+      context: ../
+      dockerfile: ./src/Services/B3.CalculoRendimentos.Api/Dockerfile
+    ports:
+      - "8080:8080"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Production
+    networks:
+      - app-network
+  
+  rendimentos-app:
+    build:
+      context: ../
+      dockerfile: ./src/Web/B3.CalculoRendimentos.Web/Dockerfile
+    ports:
+      - "80:80"
+    networks:
+      - app-network
+    depends_on:
+      - rendimentos-api
+
+networks:
+  app-network:
+    driver: bridge

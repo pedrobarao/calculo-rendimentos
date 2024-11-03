@@ -1,33 +1,36 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34728.123
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{3CED5652-0903-4830-B18B-B79C323FE66B}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{BFD42336-6EDA-4BAF-B7C8-10E107C42C5F}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Unit", "Unit", "{6BF21994-3D8B-43EA-BD23-0050FBB625AB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "B3.CalculoRendimentos.Domain.Test", "test\Unit\B3.CalculoRendimentos.Domain.Test\B3.CalculoRendimentos.Domain.Test.csproj", "{6D624F67-0BD3-42DC-9C72-F281DC7D2D0A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "B3.CalculoRendimentos.Domain.Test", "test\Unit\B3.CalculoRendimentos.Domain.Test\B3.CalculoRendimentos.Domain.Test.csproj", "{6D624F67-0BD3-42DC-9C72-F281DC7D2D0A}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{6BE35402-CE4A-4A81-B884-A863819557F2}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Web", "Web", "{B45FE132-D017-4D7C-BA6D-A33DF70FF0D7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "B3.CalculoRendimentos.Api", "src\Services\B3.CalculoRendimentos.Api\B3.CalculoRendimentos.Api.csproj", "{9CB1AB0A-A9A4-4A52-8421-55825740A150}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "B3.CalculoRendimentos.Api", "src\Services\B3.CalculoRendimentos.Api\B3.CalculoRendimentos.Api.csproj", "{9CB1AB0A-A9A4-4A52-8421-55825740A150}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "B3.CalculoRendimentos.Domain", "src\Services\B3.CalculoRendimentos.Domain\B3.CalculoRendimentos.Domain.csproj", "{47EECE4E-5140-4242-BFE2-4129DFFB2BB6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "B3.CalculoRendimentos.Domain", "src\Services\B3.CalculoRendimentos.Domain\B3.CalculoRendimentos.Domain.csproj", "{47EECE4E-5140-4242-BFE2-4129DFFB2BB6}"
+EndProject
+Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "B3.CalculoRendimentos.Web", "src\Web\B3.CalculoRendimentos.Web\B3.CalculoRendimentos.Web.esproj", "{B2E8DFC8-BFB8-4450-B2A2-689F61E2CB7E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "deploy", "deploy", "{AD88A795-73B4-4803-BC7D-D719B587DBD6}"
+	ProjectSection(SolutionItems) = preProject
+		deploy\docker-compose.yaml = deploy\docker-compose.yaml
+		deploy\nginx.conf = deploy\nginx.conf
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(NestedProjects) = preSolution
-		{6BF21994-3D8B-43EA-BD23-0050FBB625AB} = {BFD42336-6EDA-4BAF-B7C8-10E107C42C5F}
-		{6D624F67-0BD3-42DC-9C72-F281DC7D2D0A} = {6BF21994-3D8B-43EA-BD23-0050FBB625AB}
-		{6BE35402-CE4A-4A81-B884-A863819557F2} = {3CED5652-0903-4830-B18B-B79C323FE66B}
-		{B45FE132-D017-4D7C-BA6D-A33DF70FF0D7} = {3CED5652-0903-4830-B18B-B79C323FE66B}
-		{9CB1AB0A-A9A4-4A52-8421-55825740A150} = {6BE35402-CE4A-4A81-B884-A863819557F2}
-		{47EECE4E-5140-4242-BFE2-4129DFFB2BB6} = {6BE35402-CE4A-4A81-B884-A863819557F2}
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{6D624F67-0BD3-42DC-9C72-F281DC7D2D0A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -42,5 +45,23 @@ Global
 		{47EECE4E-5140-4242-BFE2-4129DFFB2BB6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{47EECE4E-5140-4242-BFE2-4129DFFB2BB6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{47EECE4E-5140-4242-BFE2-4129DFFB2BB6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B2E8DFC8-BFB8-4450-B2A2-689F61E2CB7E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B2E8DFC8-BFB8-4450-B2A2-689F61E2CB7E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B2E8DFC8-BFB8-4450-B2A2-689F61E2CB7E}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{B2E8DFC8-BFB8-4450-B2A2-689F61E2CB7E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B2E8DFC8-BFB8-4450-B2A2-689F61E2CB7E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B2E8DFC8-BFB8-4450-B2A2-689F61E2CB7E}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{6BF21994-3D8B-43EA-BD23-0050FBB625AB} = {BFD42336-6EDA-4BAF-B7C8-10E107C42C5F}
+		{6D624F67-0BD3-42DC-9C72-F281DC7D2D0A} = {6BF21994-3D8B-43EA-BD23-0050FBB625AB}
+		{6BE35402-CE4A-4A81-B884-A863819557F2} = {3CED5652-0903-4830-B18B-B79C323FE66B}
+		{B45FE132-D017-4D7C-BA6D-A33DF70FF0D7} = {3CED5652-0903-4830-B18B-B79C323FE66B}
+		{9CB1AB0A-A9A4-4A52-8421-55825740A150} = {6BE35402-CE4A-4A81-B884-A863819557F2}
+		{47EECE4E-5140-4242-BFE2-4129DFFB2BB6} = {6BE35402-CE4A-4A81-B884-A863819557F2}
+		{B2E8DFC8-BFB8-4450-B2A2-689F61E2CB7E} = {B45FE132-D017-4D7C-BA6D-A33DF70FF0D7}
 	EndGlobalSection
 EndGlobal

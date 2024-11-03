@@ -24,7 +24,7 @@ Certifique-se de que o Docker esteja rodando em sua máquina. Na raiz do projeto
 1 - Faça o build da imagem Docker:
 
 ```bash
-docker build --no-cache -t api_calculo_rendimentos -f ./src/B3.CalculoRendimentos.Api/Dockerfile .
+docker build --no-cache -t api_calculo_rendimentos -f ./src/Services/B3.CalculoRendimentos.Api/Dockerfile .
 ```
 
 2 - Execute o container:
